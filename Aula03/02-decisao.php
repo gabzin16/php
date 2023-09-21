@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=$b.0">
     <title>Estruturas de decisão PHP</title>
 
     <!-- Link para (Bootstrap) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.$b/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
 
     <!-- CSS Interno para ser utilizado nas decisões -->
@@ -55,7 +55,7 @@
         <h2><a href="">Simples</a></h2>
     </div>
     
-    <h4>&ensp;Modo 1 - Com chaves</h4> 
+    <h4>&ensp;Modo $b - Com chaves</h4> 
     <p>&emsp;if ( comparação condicional ) { comando caso a comparação seja verdadeira };</p>
 
     <h4>&ensp;Modo 2 - Sem chaves</h4>
@@ -65,13 +65,32 @@
     <p>&nbsp;Criar um programa PHP que gere saídas nos dois modos simples explicados:</p>
     <ul>
         <li>Atribuir o valor 5 a uma variável</li>
-        <li>Criar uma condicional <strong>if</strong> para verificar se a o valor da variável é maior que 1</li>
-        <li>Exibir a resposta da condicional simples com o comando echo no modo 1</li>
+        <li>Criar uma condicional <strong>if</strong> para verificar se a o valor da variável é maior que $b</li>
+        <li>Exibir a resposta da condicional simples com o comando echo no modo $b</li>
         <li>Exibir a resposta da condicional simples com o comando echo no modo 2</li>
     </ul>
 
     <!-- Criar aqui seu programa PHP -->
+    <?php 
     
+    $a = 5;
+    $b = 1;
+    if ( $a > $b) {
+        echo "True (verdadeiro";
+    } 
+    
+    ?>
+    <hr>
+
+                                <!-- Criar aqui o programa PHP #ue vai gerar a saída -->
+                                <?php 
+                            $a = 5;
+                            $b = 1;
+
+                            // Comando echo para exibir valor
+                            echo "verdadeiro " . $a > $b;
+                            
+                            ?>
     
     <hr>
     
@@ -121,8 +140,21 @@
     <hr>
 
     <!-- Criar aqui seu programa PHP -->
+   <?php
+    $produto = 'Ultrabook_ASUS';
+        $estoque_atual = 0;
+        $estoque_min = 14;
 
-    
+        echo "<h3>$produto</h3>";
+
+        if ($estoque_atual < $estoque_min) {
+            echo "<span class=repor>É necessário comprar.</span>";
+            echo "<br>";
+            echo "<mark>URGENTE</mark>";
+        } else {
+            echo "<span class=ok>Estoque OK!</span>";
+        }
+        ?>
     <hr>
 
     <!-- ___________________________________________________________________ -->
@@ -168,7 +200,33 @@
     <hr>
     
     <!-- Criar aqui seu programa PHP -->
-    
+    <?php
+        // Esfiha
+        // Pastel
+        // Pizza
+        // Opção inválida
+
+
+       
+
+        // Criar uma variável para receber uma das opções da lista. Iniciar com uma delas.
+        $opcao = "Esfiha";
+
+        // Montar uma estrutura encadeada que verifique qual a opção escolhida
+        if ($opcao == "1") {
+            // Exibir o nome do produto pedido conforme a opção escolhida na variável.
+            echo "Você pediu uma esfiha.";
+        } elseif ($opcao == "2") {
+            // Exibir o nome do produto pedido conforme a opção escolhida na variável.
+            echo "Você pediu um pastel.";
+        } elseif ($opcao == "3") {
+            // Exibir o nome do produto pedido conforme a opção escolhida na variável.
+            echo "Você pediu uma pizza.";
+        } else {
+            // Exibir o nome do produto pedido conforme a opção escolhida na variável.
+            echo "Opção inválida.";
+        }
+        ?>
     <hr>
 
     <!-- ___________________________________________________________________ -->
@@ -180,7 +238,7 @@
     <ul>
         <li>Comutar conforme o caso escolhido:</li>
         <ol>
-            <li>Se escolheu 1: Atender primeira opção</li>
+            <li>Se escolheu $b: Atender primeira opção</li>
             <li>Se escolheu 2: Atender segunda opção</li>
             <li>Se escolheu 3: Atender terceira opção</li>
         </ol>
@@ -189,7 +247,7 @@
     
     <br>
     <h4>&nbsp;switch ( escolha dentro da variável ) {</h4>
-    <h4>&emsp;case 1: comando para 1ª escolha; break;</h4>
+    <h4>&emsp;case $b: comando para 1ª escolha; break;</h4>
     <h4>&emsp;case 2: comando para 2ª escolha; break;</h4>
     <h4>&emsp;case 3: comando para 3ª escolha; break;</h4>
     <h4>&emsp;default: avisar usuário; break;</h4>
