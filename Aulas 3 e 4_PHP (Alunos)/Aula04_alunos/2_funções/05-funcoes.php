@@ -16,13 +16,11 @@
 
         <!-- Função Dados do autor -->
         <?php
-
             // 1ª Digitação (Aqui)
-
-            function dadosAutor(){
-                echo "divs";
-                echo "<p>Mattia Binotto</p>";
-                echo "<p>mattia.binotto@ferrari.f1</p>";
+            function dadosAutor (){
+                echo "<div>";
+                echo "<p> Mattia Binotto </p>";
+                echo "<p> mattia.binotto@ferrari.f1</p>";
                 echo "</div>";
             }
 
@@ -38,7 +36,7 @@
 
         </section>
         <hr>
-        
+       
         <h2 class="destaque">Função com retorno de dados</h2>
 
         <!-- Função Dados do curso -->
@@ -47,24 +45,27 @@
                 return  "Técnico em Desenvolvimento de Sistemas";
             }
 
-
         ?>
-            <p>Estamos no curso de <?=dadosCuso()?></p>
-            <p><?=dadosCurso()?> é ministrado no SENAI</p>
-    
             <!-- 2ª Digitação (Aqui) -->
+            <p>Estamos no curso de <?=dadosCurso()?>></p>
+            <p><?=dadosCurso()?> é ministrado no SENAI</p>
 
         <hr>
-        
+       
         <h2 class="destaque">Função com parâmetros (ou argumentos)</h2>
-    
+   
         <!-- Função Soma -->
         <?php
+   
 
-            // 3ª Digitação (Aqui)
+            function soma ($valor, $valor2, $valor3=0) {
+                $total = $valor + $valor2 + $valor3;
+                return $total;
+            }
 
         ?>
-    
+       
+   
         <!-- Obs: Se não fosse o uso da função a soma abaixo teria que ser feita 3x via código, portanto a função reaproveita o código (isso é uma vantagem) -->
 
         <p><?=soma(10, 20, 30)?></p>
@@ -75,15 +76,15 @@
         <?php $total = soma(1500, 2000, 125);?>
         <p><?=$total?></p>
         <!-- _________________________________________________________________________________ -->
-        
+       
         <?php
             // Passando uma função como condição do IF
             if(soma(500, 200, 700) > 1000) {
                 echo "Resultado da função é maior/igual a 1000";
 
             }
-            
-        // ____________________________________________________________________________   
+           
+        // ____________________________________________________________________________  
 
             function verificaNegativo($valor) {
                 // Versão 1: If/ else tradicional
@@ -96,7 +97,7 @@
 
                 // Versão 2: If/else usando operador ternário
                 return $valor < 0 ? "negativo" : "não é negativo";
-                
+               
             }
 
         ?>
@@ -111,8 +112,10 @@
         <h2 class="destaque">Função anônima (closure, lambda)</h2>
 
         <?php
+           $formataPreco = function($valor) {
+            return "r$" .number_format($valor,2,"," , ".");
 
-            // 4ª Digitação (Aqui)
+           }
 
         ?>
 
@@ -121,7 +124,7 @@
         <p> <?=$formataPreco(1500.75)?> </p>
 
         <hr>
-    
+   
         <!-- _________________________________________________________________ -->
         <h2 class="destaque">Indução de tipos</h2>
 
@@ -134,13 +137,16 @@
 
 
             // 5ª Digitação (Aqui)
-            
+            function calculaMedia (float $n1, float $n2): float {
+                $media =($n1 + $n2)/2;
+                return $media;
+            }
 
         ?>
 
         <p> <?=calculaMedia(10, 7)?> </p>
 
 
-        
+       
     </body>
 </html>
